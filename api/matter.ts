@@ -13,6 +13,16 @@ export const getMatters = () => {
   return Get(null, "/matters");
 };
 
+/*
 export const getKeyword = (id: Number) => {
   return Post(id, "/mattersKeyword");
+};
+*/
+
+export const getKeyword = () => {
+  return Get(null, "/mattersKeyword");
+};
+
+export const getPrefecture = () => {
+  return Get(null, "/mattersPrefecture");
 };

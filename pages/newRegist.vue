@@ -2,25 +2,36 @@
   <div>
     <h1>新規会員登録</h1>
     <form @submit.prevent>
-      <BasicInput @input-value="handleInput($event)" :value="user.email" title="メールアドレス" type="email" name="email"/>
-      <BasicInput @input-value="handleInput($event)" :value="user.password" title="パスワード" type="password" name="password"/>
+      <BasicInput
+        @input-value="handleInput($event)"
+        :value="user.email"
+        title="メールアドレス:"
+        type="email"
+        name="email"
+      />
+      <BasicInput
+        @input-value="handleInput($event)"
+        :value="user.password"
+        title="パスワード:"
+        type="password"
+        name="password"
+      />
       <BasicButton @OnClick="clickButton()" value="送信" />
       <input type="submit" value="送信" />
     </form>
   </div>
 </template>
 
-
 <script setup>
 import { BasicInput } from "@/components/Atoms/Inputs";
 import { BasicButton } from "@/components/Atoms/Buttons";
 import { postRegistration } from "@/api/user";
 const user = reactive({
-    email: "",
-    password: "",
-  });
+  email: "",
+  password: "",
+});
 
-  const handleInput = (data) =>{
+const handleInput = (data) => {
   console.log(data);
   /*
   if(data.name === "email"){
@@ -30,10 +41,7 @@ const user = reactive({
   }
   */
   user[data.name] = data.value;
-
-}
-
-
+};
 
 /*
 const clickButton = () =>{
@@ -59,18 +67,14 @@ const clickButton = () =>{
 
 //postRegistration
 //postRegistrationを使用していない・・・？
-const clickButton = async()=>{
-  try{
+const clickButton = async () => {
+  try {
     const response = await postRegistration(user);
     console.log(response);
-
-  }catch(error){
+  } catch (error) {
     console.error(error);
-
   }
-}
-
-
+};
 
 /*
 const clickButton =async()=> {
@@ -96,10 +100,7 @@ const clickButton =async()=> {
   }
 
 */
-
-
 </script>
-
 
 <style lang="scss" scope>
 p {
