@@ -1,0 +1,20 @@
+{
+  "hosting": {
+    "site": "my-first-deploy-9a4f9",
+    
+    "cleanUrls": true,
+    
+    "public": ".nuxt/dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

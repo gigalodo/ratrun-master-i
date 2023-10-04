@@ -1,7 +1,12 @@
 <template>
   <div>
     <p class="cardTitle">{{ title }}</p>
-    <p><img src="@/assets/svg/icon-pintarest.svg" alt="logo" />{{ price }}</p>
+    <p>
+      <img src="@/assets/svg/icon-pintarest.svg" alt="logo" /><span
+        style="color: red"
+        >{{ price }}</span
+      >万円/月額
+    </p>
     <p>
       <img src="@/assets/svg/icon-pintarest.svg" alt="logo" />{{ contract }}
     </p>
@@ -26,6 +31,7 @@ const props = defineProps({
 .cardTitle {
   font-size: 20px;
   font-weight: bold;
+  padding-bottom: 10px;
 }
 
 img {
@@ -35,6 +41,9 @@ img {
 
 div {
   border: 1px solid black;
-  width: 200px;
+  width: 250px;
+  padding: 0px 10px;
+  margin-right: 10px;
+  margin-top: 10px;
 }
 </style>

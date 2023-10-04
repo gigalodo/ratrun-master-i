@@ -1,18 +1,21 @@
 <template>
   <div>
-    <label for="email">{{ title }}:</label>
+    <label for="email">{{ title }}</label>
     <input
       :type="type"
       :name="name"
       :value="value"
-      @input="$emit('inputValue', { name: name, value: ($event.target as HTMLInputElement).value })"
+      @input="
+        $emit('inputValue', {
+          name: name,
+          value: ($event.target as HTMLInputElement).value,
+        })
+      "
       required
     />
   </div>
 </template>
 
-
-                         
 <script setup lang="ts">
 type InputType = "text" | "number" | "email" | "password";
 const props = defineProps({
@@ -36,6 +39,3 @@ const props = defineProps({
 
 const emits = defineEmits(["inputValue"]);
 </script>
-
-
-

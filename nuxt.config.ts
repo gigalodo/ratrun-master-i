@@ -11,6 +11,8 @@ export default defineNuxtConfig({
       },
     },
   },
-
+  nitro: {
+    preset: "firebase",
+  },
   modules: ["dayjs-nuxt"],
 });
