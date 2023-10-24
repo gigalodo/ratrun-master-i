@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
   css: ["assets/scss/reset.scss"],
   ssr: false,
+  buildDir: "dist",
   vite: {
     css: {
       preprocessorOptions: {
@@ -13,4 +13,5 @@ export default defineNuxtConfig({
   },
 
   modules: ["dayjs-nuxt"],
+  plugins: ["~/plugins/firebase.client.js"],
 });
