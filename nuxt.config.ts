@@ -1,5 +1,4 @@
 export default defineNuxtConfig({
-  devtools: { enabled: true },
   css: ["assets/scss/reset.scss"],
   ssr: false,
   vite: {
